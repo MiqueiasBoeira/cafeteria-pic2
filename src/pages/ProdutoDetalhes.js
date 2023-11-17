@@ -57,7 +57,7 @@ const ProdutoDetalhes = () => {
 
   return (
     <div className='container'>
-    <Link to="/">
+    <Link to="/menu">
         <button className='voltar-button'>←</button>
       </Link>
       <h2>{produto.nome}</h2>

@@ -54,7 +54,7 @@ const Pedidos = () => {
     return (
         <div className="container">
             
-            <Link to="/">
+            <Link to="/menu">
                 <button>←</button>
             </Link>
 

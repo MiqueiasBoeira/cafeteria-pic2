@@ -18,7 +18,7 @@ const Menu = () => {
   const apiUrl = process.env.BASE_URL_SERVER;
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/login');
+    navigate('/');
   };
 
   useEffect(() => {

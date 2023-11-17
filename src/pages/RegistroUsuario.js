@@ -23,7 +23,7 @@ const RegistroUsuario = () => {
             const response = await axios.post(`${BASE_URL_SERVER}/api/usuarios`, { nome, email, password });
 
             if (response) {
-                navigate('/');
+                navigate('/menu');
             } else {
                 setError('Credenciais inválidas. Tente novamente.');
             }
@@ -36,7 +36,7 @@ const RegistroUsuario = () => {
         <div className="container">
             <div className='login-container'>
 
-                <Link to="/login">
+                <Link to="/">
                     <button>←</button>
                 </Link>
                 <h1>Registrar usuário</h1>

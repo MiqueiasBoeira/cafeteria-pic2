@@ -125,7 +125,7 @@ const Checkout = () => {
         </select>
       </div>
 
-      <Link to='/'>
+      <Link to='/menu'>
         <button onClick={() => handleFinalizarPedido(todosProdutosCarrinho)}>
           Finalizar Pedido
         </button>

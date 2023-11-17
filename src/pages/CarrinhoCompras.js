@@ -61,7 +61,7 @@ const CarrinhoCompras = () => {
 
   return (
     <div className='container'>
-    <Link to="/">
+    <Link to="/menu">
         <button className='voltar-button'>←</button>
       </Link>
       <h1>Carrinho de Compras</h1>

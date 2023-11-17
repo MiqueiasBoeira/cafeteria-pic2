@@ -25,7 +25,7 @@ const Login = () => {
 
       if (response.data.success) {
         dispatch(login(response.data.userId, password));
-        navigate('/');
+        navigate('/menu');
       } else {
         setError('Credenciais inválidas. Tente novamente.');
       }

@@ -10,11 +10,11 @@ import Pedidos from '../src/pages/Pedidos.js'
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Menu />} />
+      <Route path="/" element={<Login />} />
       <Route path="/produto/:id" element={<ProdutoDetalhes />} />
       <Route path="/carrinho" element={<CarrinhoCompras />} />
       <Route path="/checkout" element={<Checkout/>} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/menu" element={<Menu />} />
       <Route path='/registrousuario' element={<RegistroUsuario/>} />
       <Route path='/historicopedidos' element={<Pedidos/>} />
     </Routes>
