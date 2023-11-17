@@ -10,6 +10,10 @@ const RegistroUsuario = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [nomeFocused, setNomeFocused] = useState(false);
+    const [emailFocused, setEmailFocused] = useState(false);
+    const [passwordFocused, setPasswordFocused] = useState(false);
+
     const navigate = useNavigate();
 
     const handleRegistro = async (e) => {
@@ -30,35 +34,65 @@ const RegistroUsuario = () => {
 
     return (
         <div className="container">
-        <div className='login-container'>
+            <div className='login-container'>
 
-            <Link to="/login">
-                <button>←</button>
-            </Link>
-            <h1>Registrar usuário</h1>
+                <Link to="/login">
+                    <button>←</button>
+                </Link>
+                <h1>Registrar usuário</h1>
 
 
 
-            <div>
-                <form onSubmit={handleRegistro}>
+                <div>
+                    <form onSubmit={handleRegistro}>
 
-                    <div className='form-group'>
-                        <label htmlFor="nome">Nome</label>
-                        <input name="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-                    </div>
-                    <div className='form-group'>
-                        <label htmlFor="email">E-mail</label>
-                        <input type="email" name="username" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className='form-group'>
-                        <label htmlFor="password">Senha</label>
-                        <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    </div>
-                    <p>{error}</p>
-                    <button type="submit">Registrar</button>
-                </form>
+                        <div className="form-group">
+                            <label className={nomeFocused || nome !== '' ? 'input-filled' : ''} htmlFor="nome">
+                                Nome
+                            </label>
+                            <input
+                                type="nome"
+                                name="nome"
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                                onFocus={() => setNomeFocused(true)}
+                                onBlur={() => setNomeFocused(false)}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label className={emailFocused || email !== '' ? 'input-filled' : ''} htmlFor="email">
+                                E-mail
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onFocus={() => setEmailFocused(true)}
+                                onBlur={() => setEmailFocused(false)}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className={passwordFocused || password !== '' ? 'input-filled' : ''} htmlFor="password">
+                                Senha
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                onFocus={() => setPasswordFocused(true)}
+                                onBlur={() => setPasswordFocused(false)}
+                            />
+                        </div>
+                        <div className='msg-erro'>
+                            <p>{error}</p>
+                        </div>
+                        <button type="submit">Registrar</button>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     );
 };

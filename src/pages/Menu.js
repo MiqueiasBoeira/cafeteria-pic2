@@ -7,12 +7,15 @@ import { BASE_URL_SERVER } from '../config/config.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../userActions.js';
 
+
+
 const Menu = () => {
   const [produtos, setProdutos] = useState([]);
   const [mostrarBotoes, setMostrarBotoes] = useState(false);
   const userID = useSelector((state) => state.user.usernameId);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const apiUrl = process.env.BASE_URL_SERVER;
   const handleLogout = () => {
     dispatch(logout());
     navigate('/login');
