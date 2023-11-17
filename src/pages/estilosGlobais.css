@@ -1,0 +1,401 @@
+/* estilosGlobais.css */
+
+/* Reset de estilos */
+
+
+
+/* Estilos Globais */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  /*height: 100vh;*/
+}
+
+
+
+.container {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #6D4C41;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #FFDD9C;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: #4E4E4E;
+  margin: 0.3rem;
+}
+
+/* Esquema de cores */
+.primary-color {
+  color: #8C5C39;
+}
+
+.secondary-color1 {
+  color: #F6D8A5;
+}
+
+.secondary-color2 {
+  color: #C7926C;
+}
+
+.highlight-color1 {
+  color: #FFDD9C;
+}
+
+.highlight-color2 {
+  color: #6D4C41;
+}
+
+.neutral-color1 {
+  color: #FFFFFF;
+}
+
+.neutral-color2 {
+  color: #4E4E4E;
+}
+
+/* src/pages/menu.css */
+
+/* Estilos Globais */
+
+
+h1 {
+  color: #8C5C39;
+  /* Marrom rico */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+/* Estilos para os Links dos Produtos */
+a {
+  text-decoration: none;
+  color: #6D4C41;
+  /* Marrom médio */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #FFDD9C;
+  /* Amarelo claro */
+}
+
+/* Estilos para os Detalhes dos Produtos */
+h2 {
+  margin-bottom: 10px;
+}
+
+
+/* Outros Estilos... */
+
+/* Adicione esta regra ao final do arquivo menu.css */
+
+li {
+  position: relative;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+li a {
+  text-decoration: none;
+  /* Remova a decoração de texto do link */
+  color: #333;
+  /* Cor do texto */
+}
+
+.product-info-menu {
+  display: flex;
+  align-items: center;
+
+}
+
+.product-info-menu img {
+  max-width: 8rem;
+  max-height: 5rem;
+  margin-right: 1rem;
+
+}
+
+.product-info-menu h1 {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.product-info-menu .info {
+  flex: 1;
+  /* Ocupa o restante do espaço disponível */
+  display: flex;
+  justify-content: space-between;
+  /* Espaço uniformemente entre os elementos */
+  align-items: center;
+  /* Alinha verticalmente */
+}
+
+.product-info-menu .price {
+  margin-left: auto;
+  /* Alinha o segundo h2 à direita */
+}
+
+/* Efeito de sombra sutil */
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+button {
+  background-color: #8C5C39;
+  /* Marrom rico */
+  color: #FFFFFF;
+  /* Branco */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /*margin-right: 10px;
+    margin-left:10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    */
+  margin: 10px;
+
+}
+
+button:hover {
+  background-color: #6D4C41;
+  /* Marrom médio */
+}
+
+
+img {
+  width: 100%;
+  /* Imagem ocupará 100% da largura do seu contêiner */
+  max-width: 300px;
+  /* Defina o tamanho máximo da imagem para evitar distorções */
+  height: auto;
+  /* Mantenha a proporção da imagem */
+  margin: 20px;
+  /* Adiciona um espaço à direita da imagem */
+  border-radius: 10px;
+  /* Adiciona bordas arredondadas à imagem */
+}
+
+
+.container .botoes-menu {
+  border-radius: 10px;
+  background-color: #e6e6e6;
+}
+
+
+
+
+/* CHECKOUT CSS */
+
+.checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkout-container h1 {
+  color: #8C5C39
+}
+
+.checkout-summary {
+  margin-bottom: 20px;
+}
+
+.cupom-container {
+  margin-top: 10px;
+}
+
+.checkout-form {
+  margin-bottom: 20px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkout-form textarea,
+.checkout-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+
+.cupom-invalido {
+  color: red;
+}
+
+
+/*CARRINHO COMPRAS*/
+
+.container .carrinho-compras .product-item .product-info img {
+  max-width: 5rem;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .carrinho-compras .product-item {
+  display: flex;
+  /* Tornar o .product-item um flex container */
+  justify-content: center;
+  /* Centralizar horizontalmente */
+}
+
+.container .carrinho-compras .product-item .product-info {
+  max-width: 10rem;
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  display: flex;
+  /* Tornar o .product-info um flex container */
+  flex-direction: column;
+  /* Alinhar os itens verticalmente */
+  align-items: center;
+  /* Centralizar os itens horizontalmente */
+  margin: 10px
+}
+
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+}
+
+.form-group {
+  position: relative;
+  margin: 15px;
+}
+
+.login-container h1 {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+
+.login-container label{
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  transition: 0.3s ease-out;
+  font-size: 16px;
+  color: #6D4C41;
+  padding: 0 5px;
+  pointer-events: none;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.login-container .input-filled {
+  top: 5px;
+  font-size: 12px;
+  color: #6D4C41;
+}
+
+.login-container .msg-erro p {
+  color: red;
+}
+
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8C5C39;
+  /* Marrom rico */
+  color: #FFFFFF;
+  /* Branco */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #6D4C41;
+  /* Marrom médio */
+}
+
+.login-container button a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.watermark-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px; /* Ajuste o espaçamento entre a marca d'água e o texto */
+}
+
+.watermark-container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%; /* Ajusta a posição verticalmente para o meio */
+  right: -100px; /* Ajuste a posição horizontalmente conforme necessário */
+  width: 200px; /* Largura da imagem */
+  height: 190px; /* Altura da imagem */
+  background-image: url('../../public/img-menu/img1.png'); /* Substitua pelo caminho da sua imagem */
+  opacity: 0.2; /* Ajuste a opacidade da marca d'água */
+  pointer-events: none; /* Garante que a marca d'água não afete os eventos do mouse */
+  background-size: contain; /* Ajusta o tamanho da imagem para caber no espaço */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  transform: translateY(-50%); /* Ajusta para centralizar verticalmente */
+}
