@@ -34,8 +34,7 @@ app.use(cors());
 
 connectToDatabase();
 
-app.get('/api/produtos', listarProdutos);
-
+app.get('/api/produtos', listarProdutos); 
 app.get('/api/produtos/:id', encontrarProdutoEspecifico);
 
 //rotas de usuarios
