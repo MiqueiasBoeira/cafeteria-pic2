@@ -1,11 +1,12 @@
 //server.js
 
-import express from 'express';
+import express, { json } from 'express';
 import mongoose from 'mongoose';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 import cors from 'cors';
 import { BASE_URL_DATABASE } from '../src/config/config.js';
+import { connectToDatabase, produtosCollection } from './database.js';
 const app = express();
-
 const port = process.env.PORT || 8000;
 
 
@@ -15,14 +16,12 @@ import path, { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
-
 //importar os controladores
 
-import { criarProduto, listarProdutos, atualizarProduto, excluirProduto, encontrarProdutoEspecifico} from './controllers/produtoController.js';
+import { listarProdutos, encontrarProdutoEspecifico } from './controllers/produtoController.js';
 import { criarUsuario, listarUsuarios, verificarLogin } from './controllers/userController.js';
-import { criarPedido, verPedidos, encontrarPedido} from './controllers/pedidoController.js';
-
+import { criarPedido, verPedidos, encontrarPedido } from './controllers/pedidoController.js';
+import { render } from 'ejs';
 
 app.use(express.static("../public"));
 
@@ -33,10 +32,10 @@ app.use(cors());
 
 //rotas de produtos
 
+connectToDatabase();
+
 app.get('/api/produtos', listarProdutos);
-app.post('/api/produtos', criarProduto);
-app.put('/api/produtos/:id', atualizarProduto);
-app.delete('/api/produtos/:id', excluirProduto);
+
 app.get('/api/produtos/:id', encontrarProdutoEspecifico);
 
 //rotas de usuarios
@@ -52,13 +51,13 @@ app.get('/api/pedidos/:id', encontrarPedido);
 
 
 
-// Conexão com o MongoDB
-const produtosDBConnection = mongoose.connect(`${BASE_URL_DATABASE}/produtosDB`, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const usersDBConnection = mongoose.createConnection(`${BASE_URL_DATABASE}/usersDB`, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const pedidosDBConnection = mongoose.createConnection(`${BASE_URL_DATABASE}/pedidosDB`, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
 
 app.listen(port, () => {
   console.log(`O servidor está rodando na porta ${port}`);
 });
+
+

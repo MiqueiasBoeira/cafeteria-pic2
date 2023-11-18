@@ -1,13 +1,14 @@
-import Pedido from '../models/pedidoSchema.js';
+
+import { pedidosCollection } from '../database.js';
+import { ObjectId } from 'mongodb';
 
 
 
-
-export async function verPedidos(req,res){
+export async function verPedidos(req, res) {
     try {
-        const pedidos = await Pedido.find();
+        const pedidos = await pedidosCollection.find().toArray();
         res.json(pedidos);
-    }catch (err){
+    } catch (err) {
         res.status(500).send(err);
     }
 };
@@ -15,15 +16,15 @@ export async function verPedidos(req,res){
 
 
 
-export async function criarPedido(req,res){
-    try{
-         
-        const novoPedido = new Pedido(req.body);
-        novoPedido.dataFormatada = novoPedido.data.toLocaleString();
-        const pedidoSalvo = await novoPedido.save();
+export async function criarPedido(req, res) {
+    try {
+
+        const novoPedido = req.body;
+        novoPedido.dataFormatada = new Date().toLocaleString();
+        const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
 
         res.status(201).json(pedidoSalvo);
-    }catch (err){
+    } catch (err) {
         res.status(400).send.err;
     }
 };
@@ -31,19 +32,23 @@ export async function criarPedido(req,res){
 
 
 
-export async function encontrarPedido(req,res){
-    const {id} = req.params;
 
-    try{
-        const pedido = await Pedido.findById(id);
+export async function encontrarPedido(req, res) {
+    const pedidoId = new ObjectId(req.params.id);
 
-    if (!pedido) {
-        return res.status(404).json({ error: 'Pedido não encontrado' });
-      }
-  
-      res.json(pedido);
+    
+    
+            
+    try {
+        const pedido = await pedidosCollection.findOne({_id:pedidoId});
+        
+        if (!pedido) {
+            return res.status(404).json({ error: 'Pedido não encontrado' });
+        }
+
+        res.json(pedido);
     } catch (err) {
-      res.status(500).json({ error: 'Erro ao buscar o pedido' });
+        res.status(500).json({ error: 'Erro ao buscar o pedido' });
     }
 };
 

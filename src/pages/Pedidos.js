@@ -23,6 +23,7 @@ const Pedidos = () => {
         // Realize uma solicitação GET ao servidor para buscar produtos
         axios.get(`${BASE_URL_SERVER}/api/pedidos`)
             .then((response) => {
+                
                 setPedidos(response.data);
             })
             .catch((error) => {
@@ -45,7 +46,6 @@ const Pedidos = () => {
 
     const pedidosUsuario = pedidos.filter((pedido) => String(pedido.userId) === String(userID));
 
-    
     
     const obterDetalhesProduto = (produtoId) => {
         return produtos.find((produto) => produto._id === produtoId);
