@@ -36,6 +36,9 @@ connectToDatabase();
 
 app.get('/api/produtos', listarProdutos); 
 app.get('/api/produtos/:id', encontrarProdutoEspecifico);
+app.get('/api/teste', function(req,res){
+  res.json('tá funcionando');
+})
 
 //rotas de usuarios
 app.get('/api/usuarios', listarUsuarios);
