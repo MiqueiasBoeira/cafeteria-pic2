@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 import { listarProdutos, encontrarProdutoEspecifico } from './controllers/produtoController.js';
 import { criarUsuario, listarUsuarios, verificarLogin } from './controllers/userController.js';
 import { criarPedido, verPedidos, encontrarPedido } from './controllers/pedidoController.js';
-import { render } from 'ejs';
+
 
 app.use(express.static("../public"));
 

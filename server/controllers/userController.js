@@ -19,7 +19,7 @@ export async function criarUsuario(req, res) {
   try {
 
     const novoUsuario = req.body;
-    console.log(req.body);
+    
     const result = await usersCollection.insertOne(novoUsuario);
 
     if (result) {
