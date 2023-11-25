@@ -20,7 +20,7 @@ const RegistroUsuario = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`${BASE_URL_SERVER}/api/usuarios`, { nome, email, password });
+            const response = await axios.post(`http://3.133.96.51:8000/api/usuarios`, { nome, email, password });
 
             if (response) {
                 navigate('/menu');

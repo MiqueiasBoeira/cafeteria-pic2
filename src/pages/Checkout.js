@@ -30,7 +30,7 @@ const Checkout = () => {
   };
   useEffect(() => {
     // Realize uma solicitação GET ao servidor para buscar produtos
-    axios.get(`${BASE_URL_SERVER}/api/produtos`)
+    axios.get(`http://3.133.96.51:8000/api/produtos`)
       .then((response) => {
         setProdutos(response.data);
       })

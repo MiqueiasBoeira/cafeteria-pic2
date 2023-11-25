@@ -16,7 +16,7 @@ const ProdutoDetalhes = () => {
   const [quantidadeNoCarrinho, setQuantidadeNoCarrinho] = useState(carrinho[id] || 0);
 
   useEffect(() => {
-    axios.get(`${BASE_URL_SERVER}/api/produtos/${id}`)
+    axios.get(`http://3.133.96.51:8000/api/produtos/${id}`)
       .then((response) => {
         setProduto(response.data);
       })
