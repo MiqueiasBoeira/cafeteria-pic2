@@ -5,7 +5,7 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { adicionarAoCarrinho, removerDoCarrinho } from '../actions.js';
-import { BASE_URL_SERVER } from '../config/config.js';
+
 
 const CarrinhoCompras = () => {
   const dispatch = useDispatch();

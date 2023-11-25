@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './estilosGlobais.css';
 
-import { BASE_URL_SERVER } from '../config/config.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../userActions.js';
 

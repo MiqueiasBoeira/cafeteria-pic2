@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { adicionarAoCarrinho, removerDoCarrinho } from '../actions.js';
 import { Link, redirect, useParams } from 'react-router-dom';
 import './estilosGlobais.css';
-import { BASE_URL_SERVER } from '../config/config.js';
+
 
 const ProdutoDetalhes = () => {
   const { id } = useParams();

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { BASE_URL_SERVER } from '../config/config.js';
 import { login, logout } from '../userActions.js';
 import { useDispatch } from 'react-redux';
 import './estilosGlobais.css'; // Importe o arquivo de estilos globais aqui

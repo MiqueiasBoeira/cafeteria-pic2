@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './estilosGlobais.css';
 import { finalizarPedido } from '../actions.js'; // Certifique-se de ajustar o caminho para suas ações
 import axios from 'axios';
-import { BASE_URL_SERVER } from '../config/config.js';
+
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -74,7 +74,7 @@ const Checkout = () => {
     const produtos = todosProdutosCarrinho;
     // Despacha a ação para finalizar o pedido
     try {
-      const response = axios.post(`${BASE_URL_SERVER}/api/criarpedido`, { userId, produtos });
+      const response = axios.post(`http://3.133.96.51:8000/api/criarpedido`, { userId, produtos });
       dispatch(finalizarPedido());
 
     } catch (error) {

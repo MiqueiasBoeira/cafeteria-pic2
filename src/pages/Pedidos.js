@@ -21,7 +21,7 @@ const Pedidos = () => {
 
     useEffect(() => {
         // Realize uma solicitação GET ao servidor para buscar produtos
-        axios.get(`${BASE_URL_SERVER}/api/pedidos`)
+        axios.get(`http://3.133.96.51:8000/api/pedidos`)
             .then((response) => {
                 
                 setPedidos(response.data);
