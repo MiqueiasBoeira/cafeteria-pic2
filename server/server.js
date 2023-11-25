@@ -4,7 +4,7 @@ import express, { json } from 'express';
 import mongoose from 'mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import cors from 'cors';
-import { BASE_URL_DATABASE } from '../src/config/config.js';
+
 import { connectToDatabase, produtosCollection } from './database.js';
 
 
