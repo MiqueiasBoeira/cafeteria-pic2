@@ -6,8 +6,6 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import cors from 'cors';
 import { BASE_URL_DATABASE } from '../src/config/config.js';
 import { connectToDatabase, produtosCollection } from './database.js';
-const app = express();
-const port = process.env.PORT || 8000;
 
 
 import { fileURLToPath } from 'url';
@@ -22,18 +20,18 @@ import { listarProdutos, encontrarProdutoEspecifico } from './controllers/produt
 import { criarUsuario, listarUsuarios, verificarLogin } from './controllers/userController.js';
 import { criarPedido, verPedidos, encontrarPedido } from './controllers/pedidoController.js';
 
+const app = express();
+const port = process.env.PORT || 8000;
+
+
+app.use(cors());
+
 
 app.use(express.static("../public"));
 
 app.use(express.json());
 
-app.use(cors());
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Permitir todas as origens
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
 
 
 //rotas de produtos
