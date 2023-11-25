@@ -4,9 +4,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './estilosGlobais.css';
-
-
-import { BASE_URL_SERVER } from '../config/config.js';
 import { useSelector } from 'react-redux';
 
 
