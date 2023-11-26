@@ -20,8 +20,7 @@ export async function criarPedido(req, res) {
     try {
 
         const novoPedido = req.body;
-        let options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-        novoPedido.dataFormatada = new Date().toLocaleString('pt-BR', options);
+        novoPedido.dataFormatada = new Date().toLocaleDateString('pt-BR');
         const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
 
         res.status(201).json(pedidoSalvo);
