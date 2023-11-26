@@ -25,7 +25,7 @@ export async function criarPedido(req, res) {
 
         //res.status(201).json(pedidoSalvo);
 
-        console.log(pedidoSalvo);
+        
     } catch (err) {
         res.status(400).send.err;
     }
