@@ -23,7 +23,7 @@ export async function criarPedido(req, res) {
         //novoPedido.data = new Date();
         //const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
 
-        res.status(201).json(pedidoSalvo);
+        //res.status(201).json(pedidoSalvo);
     } catch (err) {
         res.status(400).send.err;
     }
