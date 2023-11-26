@@ -55,7 +55,7 @@ const Menu = () => {
       )}
       </div>
 
-      <h1>Cardápio</h1>
+      <h1>Cardápio da Cafeteria</h1>
 
       <ul>
         {produtos.map((product) => (
