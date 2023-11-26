@@ -22,6 +22,7 @@ export async function criarPedido(req, res) {
         const novoPedido = req.body;
         //novoPedido.data = new Date();
         const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
+        console.log(pedidoSalvo);
 
         res.status(201).json(pedidoSalvo);
     } catch (err) {
