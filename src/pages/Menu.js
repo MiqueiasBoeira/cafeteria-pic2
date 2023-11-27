@@ -21,7 +21,7 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    console.log('funcionou menu');
+    
     axios.get(`http://3.133.96.51:8000/api/produtos`)
       .then((response) => {
         setProdutos(response.data);
