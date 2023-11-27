@@ -20,7 +20,7 @@ const Pedidos = () => {
         // Realize uma solicitação GET ao servidor para buscar produtos
         axios.get(`http://3.133.96.51:8000/api/pedidos`)
             .then((response) => {
-                
+
                 setPedidos(response.data);
             })
             .catch((error) => {
@@ -43,14 +43,17 @@ const Pedidos = () => {
 
     const pedidosUsuario = pedidos.filter((pedido) => String(pedido.userId) === String(userID));
 
-    
+
     const obterDetalhesProduto = (produtoId) => {
         return produtos.find((produto) => produto._id === produtoId);
     };
 
+    let dataFormatada;
+    let dataFormatadaBR;
+
     return (
         <div className="container">
-            
+
             <Link to="/menu">
                 <button>←</button>
             </Link>
@@ -63,7 +66,7 @@ const Pedidos = () => {
             <ul>
                 {pedidosUsuario.map((pedido) => (
                     <li key={pedido._id}>
-                    
+
                         <ul>
                             {pedido.produtos.map((produtoDoPedido, index) => {
                                 const detalhesProduto = obterDetalhesProduto(produtoDoPedido.produtoId);
@@ -74,7 +77,9 @@ const Pedidos = () => {
                                             <p>Preço: {detalhesProduto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                                             <p>Quantidade: {produtoDoPedido.quantidade}</p>
                                             <p>Total: {(detalhesProduto.preco * produtoDoPedido.quantidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-                                            <p>Pedido em {pedido.data.toLocaleString('pt-br',  { timeZone: 'America/Sao_Paulo' })}</p>
+                                            {dataFormatada = new Date(pedido.data)}
+                                            {dataFormatadaBR = dataFormatada.toLocaleString('pt-BR',  {timeZone: 'America/Sao_Paulo' })}
+                                            <p>Pedido em {dataFormatadaBR}</p>
                                             <h1></h1>
                                             <img src={detalhesProduto.imagem} />
                                         </div>
@@ -82,7 +87,7 @@ const Pedidos = () => {
                                 ) : null;
                             })}
                         </ul>
-                        
+
                     </li>
                 ))}
             </ul>
