@@ -69,8 +69,7 @@ const Pedidos = () => {
                         <ul>
                             {pedido.produtos.map((produtoDoPedido, index) => {
                                 const detalhesProduto = obterDetalhesProduto(produtoDoPedido.produtoId);
-                                const dataFormatada = new Date(pedido.data);
-                                const dataFormatadaBR = dataFormatada.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+                                
                                 return detalhesProduto ? (
                                     <li key={index}>
                                         <div className="product-info">
@@ -78,7 +77,7 @@ const Pedidos = () => {
                                             <p>Preço: {detalhesProduto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                                             <p>Quantidade: {produtoDoPedido.quantidade}</p>
                                             <p>Total: {(detalhesProduto.preco * produtoDoPedido.quantidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-                                            <p>Pedido em {dataFormatadaBR}</p>
+                                            <p>Pedido em {pedido.data}</p>
                                             <h1></h1>
                                             <img src={detalhesProduto.imagem} />
                                         </div>

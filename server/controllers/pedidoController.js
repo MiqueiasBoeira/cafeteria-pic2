@@ -14,13 +14,14 @@ export async function verPedidos(req, res) {
 };
 
 
-
+/*
 
 export async function criarPedido(req, res) {
     try {
 
         const novoPedido = req.body;
-        console.log('chegou aqui');
+
+        
         novoPedido.data = new Date();
         const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
 
@@ -32,6 +33,30 @@ export async function criarPedido(req, res) {
     }
 };
 
+*/
+
+export async function criarPedido(req, res) {
+    try {
+        const novoPedido = req.body;
+        
+        // Obter a data atual
+        const dataAtual = new Date();
+
+        // Ajustar para o fuso horário de São Paulo (GMT-3)
+        const dataSaoPaulo = new Date(dataAtual.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+
+        // Formatar a data para o formato DD/MM/AAAA
+        const dataFormatada = dataSaoPaulo.toLocaleDateString('pt-BR');
+
+        // Adicionar a data formatada ao pedido
+        novoPedido.data = dataFormatada;
+
+        const pedidoSalvo = await pedidosCollection.insertOne(novoPedido);
+        res.status(201).json(pedidoSalvo);
+    } catch (err) {
+        res.status(400).send(err);
+    }
+};
 
 
 
