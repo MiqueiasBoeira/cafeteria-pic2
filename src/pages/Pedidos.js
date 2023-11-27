@@ -74,7 +74,7 @@ const Pedidos = () => {
                                             <p>Preço: {detalhesProduto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                                             <p>Quantidade: {produtoDoPedido.quantidade}</p>
                                             <p>Total: {(detalhesProduto.preco * produtoDoPedido.quantidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-                                            <p>Pedido em {pedido.data.toLocaleString('pt-br')}</p>
+                                            <p>Pedido em {pedido.data.toLocaleString('pt-br',  { timeZone: 'America/Sao_Paulo' })}</p>
                                             <h1></h1>
                                             <img src={detalhesProduto.imagem} />
                                         </div>
