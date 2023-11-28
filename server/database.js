@@ -1,8 +1,9 @@
 // database.js
 import { MongoClient } from 'mongodb';
 
-const uri = 'mongodb+srv://mickajp:159Zx357@cluster0.tlq3gtq.mongodb.net/';
+const uri = 'mongodb+srv://mickajp:159357@cluster0.tlq3gtq.mongodb.net/';
 const client = new MongoClient(uri);
+
 
 let produtosCollection, usersCollection, pedidosCollection; // Variável para armazenar a referência à coleção
 
