@@ -50,10 +50,30 @@ const CarrinhoCompras = () => {
     dispatch(adicionarAoCarrinho({ produtoId, quantidade: novaQuantidade }));
   };
 
+  /*
+
   const decrementarQuantidade = (produtoId) => {
     const novaQuantidade = Math.max(carrinho[produtoId] - 1, 0);
     dispatch(adicionarAoCarrinho({ produtoId, quantidade: novaQuantidade }));
+
+
+
   };
+
+*/
+
+const decrementarQuantidade = (produtoId) => {
+  const novaQuantidade = Math.max(carrinho[produtoId] - 1, 0);
+  
+  if (novaQuantidade === 0) {
+    if (window.confirm('Deseja remover este item do carrinho?')) {
+      dispatch(removerDoCarrinho({ produtoId }));
+    }
+  } else {
+    dispatch(adicionarAoCarrinho({ produtoId, quantidade: novaQuantidade }));
+  }
+};
+
 
   const removerDoCarrinhoLocal = (produtoId) => {
     dispatch(removerDoCarrinho({ produtoId }));
